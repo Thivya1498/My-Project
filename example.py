@@ -1,0 +1,1 @@
+print("hai from pc 1")
