@@ -1,1 +1,1 @@
-print("hai from pc 1")
+print(" hai from pc 1 ")
