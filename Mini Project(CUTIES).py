@@ -26,21 +26,25 @@ lbl =Label(root, text="By using this application, you will help the MOH to\n kee
 lbl.grid(column=0,row=4)
 #creating a new window using function
 def createsecWindow():
-    win = tk.Tk()
-    secWindow= ttk.Notebook(win)
-    tab1= ttk.Frame(secWindow)
-    secWindow.add(tab1, text = 'Tab 1')
-    secWindow.pack(expand=1, fill='both')
+    secWindow = tk.Tk()
+    tabparent= ttk.Notebook(secWindow)
+    tab1= ttk.Frame(tabparent)
+    tab2= ttk.Frame(tabparent)
+    tabparent.add(tab1, text = 'Tab 1')
+    tabparent.add(tab2, text ='Tab 2')
+    tabparent.pack(expand=1, fill='both')
 
 
 #button to next page and its grid
 btn = Button(root, text="Let's Get Started",bg="black",fg="white",font=("starline",14),command=createsecWindow)
 btn.grid(column=0,row=5)
 
-
-img= ImageTk.PhotoImage(Image.open("image.jpg"))
+img= ImageTk.PhotoImage(Image.open("covid.png"))
 imgDisplay=Label(root, image=img)
 imgDisplay.grid(column=0, row=6)
+img1= ImageTk.PhotoImage(Image.open("image.jpg"))
+imgDisplay=Label(root, image=img1)
+imgDisplay.grid(column=0, row=7)
 
 
 #This will loop the application until the user ends it
