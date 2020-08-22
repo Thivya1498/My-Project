@@ -1,4 +1,5 @@
 from tkinter import*
+from PIL import Image, ImageTk
 import tkinter as tk
 #using tkinter 
 root = Tk()
@@ -32,9 +33,9 @@ def createsecWindow():
 btn = Button(root, text="Let's Get Started",bg="black",fg="white",font=("starline",14),command=createsecWindow)
 btn.grid(column=0,row=5)
 
-covid_photo = PhotoImage(file="C:\\Users\\user\\Documents\\python codes\\mini project\\image.png")
-lbl=Label(root, image=covid_photo)
-lbl.grid(column=0, row=6)
+img= ImageTk.PhotoImage(Image.open("image.png"))
+imgDisplay=Label(root, image=img)
+imgDisplay.grid(column=0, row=6)
 
 
 #This will loop the application until the user ends it
