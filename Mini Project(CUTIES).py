@@ -30,7 +30,7 @@ def createsecWindow():
     tabparent= ttk.Notebook(secWindow)
     tab1= ttk.Frame(tabparent)
     tab2= ttk.Frame(tabparent)
-    tabparent.add(tab1, text = 'Tab 1')
+    tabparent.add(tab1, text = 'Detail Attendance')
     tabparent.add(tab2, text ='Tab 2')
     tabparent.pack(expand=1, fill='both')
 
