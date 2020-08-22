@@ -33,7 +33,7 @@ def createsecWindow():
 btn = Button(root, text="Let's Get Started",bg="black",fg="white",font=("starline",14),command=createsecWindow)
 btn.grid(column=0,row=5)
 
-img= ImageTk.PhotoImage(Image.open("image.png"))
+img= ImageTk.PhotoImage(Image.open("covid.png"))
 imgDisplay=Label(root, image=img)
 imgDisplay.grid(column=0, row=6)
 
