@@ -33,7 +33,6 @@ def createsecWindow():
     secWindow.pack(expand=1, fill='both')
 
 
-
 #button to next page and its grid
 btn = Button(root, text="Let's Get Started",bg="black",fg="white",font=("starline",14),command=createsecWindow)
 btn.grid(column=0,row=5)
