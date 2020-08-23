@@ -33,12 +33,24 @@ def createsecWindow():
     tabparent.add(tab1, text = 'Detail Attendance')
     tabparent.add(tab2, text ='Screening Process')
     tabparent.grid()
+<<<<<<< HEAD
+#screening process (tab 2 )
+=======
+    lblName = Label(tab1, text = "Student's Name  : ").grid(column=0, row=1)
+    enttemp = Entry(tab1, width = 40 ).grid (column=1, row=1, padx=50, pady=30)
+    lblProgram = Label(tab1, text = "Program  : ").grid(column=0, row=2)
+    enttemp = Entry(tab1, width = 40 ).grid (column=1, row=2, padx=50, pady=30)
+    lblMatric = Label(tab1, text = "Matric No.  : ").grid(column=0, row=3)
+    enttemp = Entry(tab1, width = 40 ).grid (column=1, row=3, padx=50, pady=30)
+    lblPhone = Label(tab1, text = "Phone No.  : ").grid(column=0, row=4)
+    enttemp = Entry(tab1, width = 40 ).grid (column=1, row=4, padx=50, pady=30)
 
+
+>>>>>>> b0cf5f0fd8250f3f3fa49df965f39deedebb3efb
     lbl_name = Label(tab2, text = "Your Body Temprature :")
     lbl_name.grid(column=0, row=1)
     enttemp = Entry(tab2, width = 40 ) .grid (column=1, row=1, padx=50, pady=50)
     lbl.name = Label(tab2, text = "symptoms of infection : ").grid (column=0, row=2,)
-    
     CheckVar1 = IntVar ()
     CheckVar2 = IntVar ()
     CheckVar3 = IntVar ()
@@ -46,12 +58,16 @@ def createsecWindow():
     CheckVar5 = IntVar ()
     CheckVar6 = IntVar ()
     CheckVar7 = IntVar ()
-    Checksymptoms1 = Checkbutton (tab2, text="Fever", variable = CheckVar1,onvalue = 1, offvalue = 0,width = 20).grid (column =0,row=3)
-   
-    
-   
-
-
+    Checksymptoms1 = Checkbutton (tab2, text="Fever", variable = CheckVar1,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=3,padx=50) 
+    Checksymptoms2 = Checkbutton (tab2, text="Dry Cough", variable = CheckVar2,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=4,padx=50) 
+    Checksymptoms3 = Checkbutton (tab2, text="Sore Throat", variable = CheckVar3,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=5,padx=50)
+    Checksymptoms4 = Checkbutton (tab2, text="Tiredness", variable = CheckVar4,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=6,padx=50)
+    Checksymptoms5 = Checkbutton (tab2, text="Nasal Congestion", variable = CheckVar5,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=7,padx=50)
+    Checksymptoms6 = Checkbutton (tab2, text="Runny Nose", variable = CheckVar6,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=8,padx=50)
+    Checksymptoms7 = Checkbutton (tab2, text="Aches and Pains", variable = CheckVar7,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=9,padx=50)
+    btn = Button(tab2,text='SUBMIT')
+    btn.grid(column=1,row=11, padx=50)
+    tab2.mainloop()
 #button to next page and its grid
 btn = Button(root, text="Let's Get Started",bg="black",fg="white",font=("starline",14),command=createsecWindow)
 btn.grid(column=0,row=5)
