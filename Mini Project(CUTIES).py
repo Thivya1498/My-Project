@@ -33,12 +33,9 @@ def createsecWindow():
     tabparent.add(tab1, text = 'Detail Attendance')
     tabparent.add(tab2, text ='Screening Process')
     tabparent.grid()
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 #screening process (tab 2 )
-=======
-=======
->>>>>>> b0cf5f0fd8250f3f3fa49df965f39deedebb3efb
+
     lblName = Label(tab1, text = "Student's Name  : ").grid(column=0, row=1)
     enttemp = Entry(tab1, width = 40 ).grid (column=1, row=1, padx=50, pady=30)
     lblProgram = Label(tab1, text = "Program  : ").grid(column=0, row=2)
@@ -47,13 +44,8 @@ def createsecWindow():
     enttemp = Entry(tab1, width = 40 ).grid (column=1, row=3, padx=50, pady=30)
     lblPhone = Label(tab1, text = "Phone No.  : ").grid(column=0, row=4)
     enttemp = Entry(tab1, width = 40 ).grid (column=1, row=4, padx=50, pady=30)
-<<<<<<< HEAD
-=======
-
->>>>>>> b0cf5f0fd8250f3f3fa49df965f39deedebb3efb
 
 
->>>>>>> b0cf5f0fd8250f3f3fa49df965f39deedebb3efb
     lbl_name = Label(tab2, text = "Your Body Temprature :")
     lbl_name.grid(column=0, row=1)
     enttemp = Entry(tab2, width = 40 ) .grid (column=1, row=1, padx=50, pady=50)
