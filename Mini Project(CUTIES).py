@@ -7,6 +7,7 @@ from PIL import Image, ImageTk
 from tkinter import ttk
 import tkinter as tk
 import sqlite3
+import tkinter.messagebox
 
 #using tkinter 
 root = Tk()
@@ -17,7 +18,7 @@ root.geometry("700x900")
 root['bg']="IndianRed3"
 
 #welcoming title and its grid
-lbl = Label(root, text = "Welcome to TIES Attendance Recorder",bg="yellow3",fg="darkblue", font=("Times New Roman",20,"bold","underline"))
+lbl = Label(root, text = "Welcome to CUTIES Attendance Recorder",bg="yellow3",fg="darkblue", font=("Times New Roman",20,"bold","underline"))
 lbl.grid(column=0, row=0, padx=70, pady=40)
 
 #explanation of the application in BM and its grid
@@ -63,10 +64,11 @@ def createsecWindow():
         conn.close()
         
         #show message box for successful query
-        #tkinter.messagebox.showinfo("Success", "Data inserted successfully.")
+        tkinter.messagebox.showinfo("Success", "Data inserted successfully.")
         
         #clear the form after button is hit & show existing data
-            #clearEntry()
+        clearEntry()
+        showExisting()
         
     def showExisting():
         conn = sqlite3.connect('attendance-book-data.db')  
@@ -102,6 +104,26 @@ def createsecWindow():
      
         conn.close()
 
+    def clearEntry():
+        entName.delete(0,END)
+        entProgram.delete(0,END)
+        entMatric.delete(0,END)
+        entPhone.delete(0,END)
+    def clearTab2():
+        entTemp.delete(0,END)
+        
+
+    #Warning if have risk or not.
+    def risk():
+        x=Tk()
+        if entTemp <=37:
+            messagebox.showinfo("Information", "Your Temperature is Normal.") 
+        elif enttemp <=38:
+            messagebox.showinfo("Information", "Attention is need to be given to your Temperature and You can't get in to the Classroom")
+        else:
+            messagebox.showinfo("Information", "Medicine from docter is needed")
+            
+        x.mainloop()  
 #student details (tab 1)
     lblName = Label(tab1, text = "Student's Name  : ")
     lblName.grid(column=0, row=1)
@@ -127,11 +149,14 @@ def createsecWindow():
     entPhone = Entry(tab1, width = 40 )
     entPhone.grid (column=1, row=4, padx=50, pady=30)
 
+    btnClear1 = Button(tab1, text="Clear",command=clearEntry)
+    btnClear1.grid(column=1,row=5, pady=30)
+
 #screening process (tab 2 )
     lblTemp = Label(tab2, text = "Body Temprature :")
     lblTemp.grid(column=0, row=1)
 
-    entTemp = Entry(tab2, width = 40 ) 
+    entTemp = (Entry(tab2, width = 40 ) )
     entTemp.grid (column=1, row=1, padx=50, pady=50)
 
     lblSymptom = Label(tab2, text = "Symptoms of Infection : ")
@@ -144,10 +169,12 @@ def createsecWindow():
     Checksymptoms5 = Checkbutton (tab2, text="Nasal Congestion/Hidung Tersumbat", takefocus = 0).place(x = 150, y = 200) 
     Checksymptoms6 = Checkbutton (tab2, text="Runny Nose/Hidung Berair",takefocus = 0).place(x = 150, y = 220) 
     Checksymptoms7 = Checkbutton (tab2, text="Aches and Pains/sakit-sakit badan",takefocus = 0).place(x=150 ,  y = 240) 
-    btn = Button(tab2,text='SUBMIT',command=submitForm)
-    btn.place(x= 150, y=260)
-    
-    
+    btnSave = Button(tab2,text='Save',command=submitForm)
+    btnSave.place(x= 150, y=260)
+    btnSubmit = Button(tab2,text='Submit',command=risk)
+    btnSubmit.place(x=190, y=260)
+    btnClear= Button(tab2,text="Clear",command=clearTab2)
+    btnClear.place(x=240,y=260)
 #database(tab3)
 
     btnShowAll = Button(tab3, text="Show All", command=showExisting)
@@ -169,31 +196,16 @@ def createsecWindow():
     lblExTemp= Label(lfExistingAttendance, text="Body Temperature")
     lblExTemp.grid(row=2,column=5,padx=2,sticky=W)
 
-    
 
-#Warning if have risk or not.
-def risk():
-    x=Tk()
-    if entTemp <=37:
-        messagebox.showinfo("Information", "Your Temperature is Normal") 
-        #messagebox.showinfo(.)
-    elif enttemp <=38:
-       messagebox.showinfo("Information", "Your Temperature is Attention need to be given")
-    else :
-        messagebox.showinfo("Information", "Your Temperature is Medicine from docter is needed")
-        
-#B1 = Button(, text = "Submit", command = risk)
-#B1.pack()
-    x.mainloop()
 #button to next page and its grid
 btn = Button(root, text="Let's Get Started",bg="black",fg="white",font=("starline",14),command=createsecWindow)
 btn.grid(column=0,row=5)
 
 img= ImageTk.PhotoImage(Image.open("covid.png"))
-imgDisplay=Label(root, image=img)
+imgDisplay=Label(root, image=img,bg="IndianRed3")
 imgDisplay.grid(column=0, row=6)
 img1= ImageTk.PhotoImage(Image.open("image.jpg"))
-imgDisplay=Label(root, image=img1)
+imgDisplay=Label(root, image=img1,bg="IndianRed3")
 imgDisplay.grid(column=0, row=7)
 
 
