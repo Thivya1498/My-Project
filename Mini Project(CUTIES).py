@@ -31,21 +31,23 @@ def createsecWindow():
     tab1= ttk.Frame(tabparent)
     tab2= ttk.Frame(tabparent)
     tabparent.add(tab1, text = 'Detail Attendance')
-    tabparent.add(tab2, text ='screening process')
+    tabparent.add(tab2, text ='Screening Process')
+    tabparent.grid()
+
     lbl_name = Label(tab2, text = "Your Body Temprature :")
-    lbl_name.grid(column=0, row=1, padx=50, pady=50)
+    lbl_name.grid(column=0, row=1)
     enttemp = Entry(tab2, width = 40 ) .grid (column=1, row=1, padx=50, pady=50)
-    #lbl.name = Label(tab2, text = "symptoms of infection : ") .grid (column=2, row=2)
+    lbl.name = Label(tab2, text = "symptoms of infection : ").grid (column=0, row=2,)
     
-    #Checkvar1 = Intvar ()
-    #Checkvar2 = Intvar ()
-    #Checkvar3 = Intvar ()
-    #Checkvar4 = Intvar ()
-    #Checkvar5 = Intvar ()
-    #Checkvar6 = Intvar ()
-    #Checkvar7 = Intvar ()
-    #Checksymptoms1 = Checkbutton (tab2, text "Fever", variables = Checkvar1) .grid (column = 0)
-    #tabparent.grid()
+    CheckVar1 = IntVar ()
+    CheckVar2 = IntVar ()
+    CheckVar3 = IntVar ()
+    CheckVar4 = IntVar ()
+    CheckVar5 = IntVar ()
+    CheckVar6 = IntVar ()
+    CheckVar7 = IntVar ()
+    Checksymptoms1 = Checkbutton (tab2, text="Fever", variable = CheckVar1,onvalue = 1, offvalue = 0,width = 20).grid (column =0,row=3)
+   
     
    
 
