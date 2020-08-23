@@ -34,8 +34,7 @@ def createsecWindow():
     tabparent.add(tab2, text ='Screening Process')
     tabparent.grid()
 
-#screening process (tab 2 )
-
+#student details (tab 1)
     lblName = Label(tab1, text = "Student's Name  : ").grid(column=0, row=1)
     enttemp = Entry(tab1, width = 40 ).grid (column=1, row=1, padx=50, pady=30)
     lblProgram = Label(tab1, text = "Program  : ").grid(column=0, row=2)
@@ -45,27 +44,21 @@ def createsecWindow():
     lblPhone = Label(tab1, text = "Phone No.  : ").grid(column=0, row=4)
     enttemp = Entry(tab1, width = 40 ).grid (column=1, row=4, padx=50, pady=30)
 
-
+#screening process (tab 2 )
     lbl_name = Label(tab2, text = "Your Body Temprature :")
     lbl_name.grid(column=0, row=1)
     enttemp = Entry(tab2, width = 40 ) .grid (column=1, row=1, padx=50, pady=50)
     lbl.name = Label(tab2, text = "symptoms of infection : ").grid (column=0, row=2,)
-    CheckVar1 = IntVar ()
-    CheckVar2 = IntVar ()
-    CheckVar3 = IntVar ()
-    CheckVar4 = IntVar ()
-    CheckVar5 = IntVar ()
-    CheckVar6 = IntVar ()
-    CheckVar7 = IntVar ()
-    Checksymptoms1 = Checkbutton (tab2, text="Fever/Demam", variable = CheckVar1,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=3,padx=50) 
-    Checksymptoms2 = Checkbutton (tab2, text="Dry Cough/ Batuk Kering  ", variable = CheckVar2,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=4,padx=50) 
-    Checksymptoms3 = Checkbutton (tab2, text="Sore Throat/Sakit Tekak  ", variable = CheckVar3,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=5,padx=50)
-    Checksymptoms4 = Checkbutton (tab2, text="Tiredness/Penat", variable = CheckVar4,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=6,padx=50)
-    Checksymptoms5 = Checkbutton (tab2, text="Nasal Congestion/Hidung Tersumbat", variable = CheckVar5,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=7,padx=50)
-    Checksymptoms6 = Checkbutton (tab2, text="Runny Nose/Hidung Berair", variable = CheckVar6,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=8,padx=50)
-    Checksymptoms7 = Checkbutton (tab2, text="Aches and Pains/Sakit-sakit Badan", variable = CheckVar7,onvalue = 1, offvalue = 0,width = 20).grid (column =1,row=9,padx=50)
+   
+    Checksymptoms1 = Checkbutton (tab2, text="Fever/Demam", takefocus = 0).place(x = 150, y = 120)  
+    Checksymptoms2 = Checkbutton (tab2, text="Dry Cough/Batuk Kering",takefocus = 0).place(x = 150, y =140)   
+    Checksymptoms3 = Checkbutton (tab2, text="Sore Throat/Sakit Tekak",takefocus = 0).place(x = 150, y = 160)  
+    Checksymptoms4 = Checkbutton (tab2, text="Tiredness/Penat", takefocus = 0).place(x = 150, y = 180) 
+    Checksymptoms5 = Checkbutton (tab2, text="Nasal Congestion/Hidung Tersumbat", takefocus = 0).place(x = 150, y = 200) 
+    Checksymptoms6 = Checkbutton (tab2, text="Runny Nose/Hidung Berair",takefocus = 0).place(x = 150, y = 220) 
+    Checksymptoms7 = Checkbutton (tab2, text="Aches and Pains/sakit-sakit badan",takefocus = 0).place(x=150 ,  y = 240) 
     btn = Button(tab2,text='SUBMIT')
-    btn.grid(column=1,row=11, padx=50)
+    btn.place(x= 150, y=260)
     tab2.mainloop()
     
 #Warning if have risk or not.
