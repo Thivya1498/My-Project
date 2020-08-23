@@ -31,8 +31,23 @@ def createsecWindow():
     tab1= ttk.Frame(tabparent)
     tab2= ttk.Frame(tabparent)
     tabparent.add(tab1, text = 'Detail Attendance')
-    tabparent.add(tab2, text ='Tab 2')
-    tabparent.pack(expand=1, fill='both')
+    tabparent.add(tab2, text ='screening process')
+    lbl_name = Label(tab2, text = "Your Body Temprature :")
+    lbl_name.grid(column=0, row=1, padx=50, pady=50)
+    #enttemp = Entry(tab2, width = 40 ) .grid (column=1, row=1, padx=50, pady=50)
+    #lbl.name = Label(tab2, text = "symptoms of infection : ") .grid (column=2, row=2)
+    
+    #Checkvar1 = Intvar ()
+    #Checkvar2 = Intvar ()
+    #Checkvar3 = Intvar ()
+    #Checkvar4 = Intvar ()
+    #Checkvar5 = Intvar ()
+    #Checkvar6 = Intvar ()
+    #Checkvar7 = Intvar ()
+    #Checksymptoms1 = Checkbutton (tab2, text "Fever", variables = Checkvar1) .grid (column = 0)
+    #tabparent.grid()
+    
+   
 
 
 #button to next page and its grid
