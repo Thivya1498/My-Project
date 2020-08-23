@@ -33,6 +33,15 @@ def createsecWindow():
     tabparent.add(tab1, text = 'Detail Attendance')
     tabparent.add(tab2, text ='Screening Process')
     tabparent.grid()
+    lblName = Label(tab1, text = "Student's Name  : ").grid(column=0, row=1)
+    enttemp = Entry(tab1, width = 40 ).grid (column=1, row=1, padx=50, pady=30)
+    lblProgram = Label(tab1, text = "Program  : ").grid(column=0, row=2)
+    enttemp = Entry(tab1, width = 40 ).grid (column=1, row=2, padx=50, pady=30)
+    lblMatric = Label(tab1, text = "Matric No.  : ").grid(column=0, row=3)
+    enttemp = Entry(tab1, width = 40 ).grid (column=1, row=3, padx=50, pady=30)
+    lblPhone = Label(tab1, text = "Phone No.  : ").grid(column=0, row=4)
+    enttemp = Entry(tab1, width = 40 ).grid (column=1, row=4, padx=50, pady=30)
+
 
     lbl_name = Label(tab2, text = "Your Body Temprature :")
     lbl_name.grid(column=0, row=1)
