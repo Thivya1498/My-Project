@@ -76,7 +76,6 @@ def createsecWindow():
         
         #clear the form after button is hit & show existing data
         clearEntry()
-        clearTab2()
         showExisting()
         
     #creating a function to show the existing data from database
